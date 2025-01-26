@@ -6,7 +6,7 @@ export async function GET() {
     const files = await listFiles()
     return NextResponse.json(files)
   } catch (error) {
-    return NextResponse.json({ error: 'Error listing files' }, { status: 500 })
+    return NextResponse.json({ error: `Error listing files (${error})` }, { status: 500 })
   }
 }
 
@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ signedUrl })
   } catch (error) {
     return NextResponse.json(
-      { error: 'Error generating download URL' },
+      { error: `Error generating download URL (${error})` },
       { status: 500 }
     )
   }
@@ -31,6 +31,6 @@ export async function DELETE(request: NextRequest) {
     await deleteFile(key)
     return NextResponse.json({ message: 'File deleted successfully' })
   } catch (error) {
-    return NextResponse.json({ error: 'Error deleting file' }, { status: 500 })
+    return NextResponse.json({ error: `Error deleting file (${error})` }, { status: 500 })
   }
 }
