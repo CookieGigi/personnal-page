@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 600" preserveAspectRatio="none">
+  <defs>
+    <radialGradient id="bgGradientLight" cx="50%" cy="50%" r="80%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#BCE9FF" />
+      <stop offset="70%" stop-color="#D0E6F2" />
+    </radialGradient>
+    <radialGradient id="bgGradientDark" cx="50%" cy="50%" r="80%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#004d63" />
+      <stop offset="70%" stop-color="#191C1E" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Light Mode Background -->
+  <!-- <g id="light-mode"> -->
+  <!--   <rect width="100%" height="100%" fill="url(#bgGradientLight)" /> -->
+  <!-- </g> -->
+  
+  <!-- Dark Mode Background -->
+  <g id="dark-mode">
+    <rect width="100%" height="100%" fill="url(#bgGradientDark)" />
+  </g>
+</svg>

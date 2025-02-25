@@ -1,32 +1,11 @@
-'use client'
 
 import Avatar from "@/components/avatar"
-import Button from "@/components/button"
 import Surface from "@/components/surface"
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons"
-import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub"
-import { faDownload } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import Buttons from "./buttons";
+import ToggleSwitch from "@/components/toggle_switch/toggle_switch";
 
 export default function Home() {
-  const handleDownload = async (key: string) => {
-    try {
-      const response = await fetch('/api/files', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ key })
-      })
-      const { signedUrl } = await response.json()
-      window.open(signedUrl, '_blank')
-    } catch (error) {
-      console.error('Error downloading file:', error)
-      alert('Error downloading file')
-    }
-  }
 
-  const handleLink = async (link: string) => {
-    window.open(link, "_blank");
-  }
 
   return (
     <div className="background min-h-svh h-fit  flex flex-col justify-center items-center">
@@ -41,7 +20,7 @@ export default function Home() {
                 <h1 className="text-onSurface">Guillaume Creusot</h1>
               </div>
               <div className="">
-                <h2 className="text-onSurface">Software Engineer</h2>
+                <h2 className="text-onSurface">.Net Developper</h2>
               </div>
             </div>
           </div>
@@ -57,30 +36,11 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-row justify-around items-center flex-wrap">
-            <Button
-              onClick={() => handleLink("https://linkedin.com/in/guillaume-creusot-678237179")}
-              className="bg-primaryContainer text-onPrimaryContainer w-32"
-            >
-              <FontAwesomeIcon icon={faLinkedin} />
-              <span>Linkedin</span>
-            </Button>
-            <Button
-              onClick={() => handleLink("https://github.com/CookieGigi")}
-              className="bg-secondaryContainer text-onSecondaryContainer w-32"
-            >
-              <FontAwesomeIcon icon={faGithub} />
-              <span>Github</span>
-            </Button>
-            <Button
-              onClick={() => handleDownload("Guillaume_Creusot_CV.pdf")}
-              className="bg-tertiaryContainer text-onTertiaryContainer w-32"
-            >
-              <FontAwesomeIcon icon={faDownload} />
-              <span>CV</span>
-            </Button>
+            <Buttons />
           </div>
         </div>
       </Surface>
+      <ToggleSwitch />
     </div >);
 
 

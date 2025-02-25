@@ -3,27 +3,42 @@
 @tailwind utilities;
 
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color-scheme: light;
-  }
+:root {
+  color-scheme: light dark;
+}
+
+@media (color-scheme: light) {
 
   .background {
     background-image: url("/light-bg.svg");
     background-size: 100% 100%;
 
   }
+
+  .card {
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    background-color: rgba(251, 252, 254, 0.5);
+  }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-  }
+/* @media (prefers-color-scheme: dark) { */
+/*   :root { */
+/*     color-scheme: dark; */
+/*   } */
+/* } */
 
+@media (color-scheme: dark) {
   .background {
     background-image: url("/dark-bg.svg");
     background-size: 100% 100%;
 
+  }
+
+  .card {
+    backdrop-filter: blur(10px);
+    background: rgba(25, 28, 30, 0.5);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
   }
 }
 

@@ -21,6 +21,9 @@ export default {
         onSecondaryContainer: "light-dark(#081E27, #D0E6F2)",
         tertiaryContainer: "light-dark(#E2DFFF, #454364)",
         onTertiaryContainer: "light-dark(#191836, #E2DFFF)",
+        primary: "light-dark(#006783,#63D3FF)",
+        onPrimary: "light-dark(#FFFFFF,#003545)",
+
       },
     },
   },
